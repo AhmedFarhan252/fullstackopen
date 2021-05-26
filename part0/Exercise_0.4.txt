@@ -1,0 +1,16 @@
+title Exercise 0.4
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note right of Server: Add note into existing list
+Server-->Browser: HTTP Status Code 302: /exampleapp/notes
+note left of Browser: Reload /exampleapp/notes
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: HTML-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+note over Browser: Start executing js code which requests data from Server
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: data.json : [{"content":"SPA 2","date":"2021...}]
+note over Browser: browser executes the event handler that renders notes to display
